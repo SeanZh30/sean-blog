@@ -52,13 +52,22 @@ footer,
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* 首页第一条 */
+/* 首页欢迎区域 */
 .first-entry {
     background: rgba(255, 255, 255, 0.45) !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(200, 210, 230, 0.3) !important;
     border-radius: var(--radius);
+    text-align: center;
+    align-items: center;
+}
+
+.first-entry .entry-header,
+.first-entry .entry-content,
+.first-entry .entry-footer {
+    text-align: center;
+    width: 100%;
 }
 
 /* 文章详情页 */
