@@ -48,7 +48,7 @@ defaultContentLanguage = 'zh'
 
   [languages.en.params.homeInfoParams]
     Title = "Hi, Welcome to Sean's Blog"
-    Content = "Most content on this blog is originally written in Chinese. English versions are translated directly or with the help of AI."
+    Content = "This is my personal blog where I share technical articles and learning notes."
 
   [[languages.en.menu.main]]
     identifier = "posts"
