@@ -1,121 +1,141 @@
 <style>
 /* ===== Light Mode - 小清新渐变 ===== */
 :root {
-    --theme: transparent;
-    --entry: rgba(255, 255, 255, 0.75);
+    --theme: transparent !important;
+    --entry: rgba(255, 255, 255, 0.6);
     --primary: rgb(45, 55, 72);
-    --secondary: rgb(113, 128, 150);
+    --secondary: rgb(100, 116, 139);
     --tertiary: rgb(226, 232, 240);
     --content: rgb(45, 55, 72);
-    --border: rgba(203, 213, 225, 0.6);
-    --code-bg: rgba(241, 245, 249, 0.8);
+    --border: rgba(180, 200, 220, 0.5);
+    --code-bg: rgba(241, 245, 249, 0.85);
 }
 
 body {
-    background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 30%, #fdf4ff 60%, #fff7ed 100%) !important;
+    background: linear-gradient(135deg, #bae6fd 0%, #bbf7d0 35%, #e9d5ff 65%, #fed7aa 100%) !important;
     background-attachment: fixed !important;
-    min-height: 100vh;
 }
 
+/* 确保所有层级透明 */
+.main,
+.container,
+.wrapper,
+main,
+footer,
+.list,
+.terms-tags,
+.archive-month,
+.archive-entry {
+    background: transparent !important;
+}
+
+/* Header 毛玻璃 */
 .header {
-    background: rgba(255, 255, 255, 0.7) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.55) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(200, 210, 230, 0.3);
 }
 
+/* 文章卡片 */
 .post-entry {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(203, 213, 225, 0.4);
+    background: rgba(255, 255, 255, 0.55) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(200, 210, 230, 0.35) !important;
+    border-radius: var(--radius);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .post-entry:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-.post-content,
-.post-single {
+/* 首页第一条 */
+.first-entry {
+    background: rgba(255, 255, 255, 0.45) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(200, 210, 230, 0.3) !important;
+    border-radius: var(--radius);
+}
+
+/* 文章详情页 */
+.post-single .post-content {
     background: transparent;
 }
 
-footer {
-    background: transparent !important;
+/* 搜索框 */
+.search-input,
+#searchInput {
+    background: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
-.list {
-    background: transparent !important;
+/* 分页按钮 */
+.pagination a {
+    background: var(--primary) !important;
+}
+
+/* autofill 背景修复 */
+input:-webkit-autofill {
+    box-shadow: 0 0 0 50px rgba(255, 255, 255, 0.8) inset !important;
 }
 
 /* ===== Dark Mode - 深色渐变 ===== */
 :root[data-theme="dark"] {
-    --theme: transparent;
-    --entry: rgba(30, 41, 59, 0.75);
+    --theme: transparent !important;
+    --entry: rgba(30, 41, 59, 0.6);
     --primary: rgb(226, 232, 240);
     --secondary: rgb(148, 163, 184);
     --tertiary: rgb(51, 65, 85);
     --content: rgb(203, 213, 225);
-    --border: rgba(51, 65, 85, 0.6);
-    --code-bg: rgba(30, 41, 59, 0.8);
+    --border: rgba(51, 65, 85, 0.5);
+    --code-bg: rgba(30, 41, 59, 0.85);
     --code-block-bg: rgba(15, 23, 42, 0.9);
 }
 
 [data-theme="dark"] body {
-    background: linear-gradient(135deg, #0f172a 0%, #1a1a2e 30%, #16213e 60%, #0f172a 100%) !important;
+    background: linear-gradient(135deg, #0c1929 0%, #1a1040 35%, #0d2137 65%, #132218 100%) !important;
     background-attachment: fixed !important;
 }
 
 [data-theme="dark"] .header {
-    background: rgba(15, 23, 42, 0.7) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(15, 23, 42, 0.6) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(51, 65, 85, 0.3);
 }
 
 [data-theme="dark"] .post-entry {
-    background: rgba(30, 41, 59, 0.6);
-    border: 1px solid rgba(51, 65, 85, 0.4);
+    background: rgba(30, 41, 59, 0.5) !important;
+    border: 1px solid rgba(51, 65, 85, 0.35) !important;
 }
 
 [data-theme="dark"] .post-entry:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-[data-theme="dark"] .list {
-    background: transparent !important;
-}
-
-/* ===== 通用美化 ===== */
-.first-entry {
-    background: rgba(255, 255, 255, 0.5) !important;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(203, 213, 225, 0.3);
-    border-radius: var(--radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="dark"] .first-entry {
-    background: rgba(30, 41, 59, 0.5) !important;
-    border: 1px solid rgba(51, 65, 85, 0.3);
+    background: rgba(30, 41, 59, 0.4) !important;
+    border: 1px solid rgba(51, 65, 85, 0.3) !important;
 }
 
-article {
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border-radius: var(--radius);
-    padding: 20px;
-    margin-bottom: 16px;
+[data-theme="dark"] .list,
+[data-theme="dark"] .main,
+[data-theme="dark"] main,
+[data-theme="dark"] footer {
+    background: transparent !important;
 }
 
-[data-theme="dark"] article {
-    background: rgba(30, 41, 59, 0.4);
+[data-theme="dark"] .search-input,
+[data-theme="dark"] #searchInput {
+    background: rgba(30, 41, 59, 0.6) !important;
 }
 
-.post-single article {
-    background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+[data-theme="dark"] input:-webkit-autofill {
+    box-shadow: 0 0 0 50px rgba(30, 41, 59, 0.8) inset !important;
 }
 </style>
