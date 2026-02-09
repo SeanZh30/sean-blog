@@ -5,6 +5,7 @@ theme = 'PaperMod'
 
 [params]
   description = "Sean 的个人博客"
+  comments = true
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
