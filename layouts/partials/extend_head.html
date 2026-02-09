@@ -1,44 +1,38 @@
 <style>
-/* ===== Light Mode - 小清新渐变 ===== */
-:root {
+/* ===== Light Mode - colorful gradient (only when .colorful) ===== */
+body.colorful {
     --theme: transparent !important;
     --entry: rgba(255, 255, 255, 0.6);
-    --primary: rgb(45, 55, 72);
-    --secondary: rgb(100, 116, 139);
-    --tertiary: rgb(226, 232, 240);
-    --content: rgb(45, 55, 72);
     --border: rgba(180, 200, 220, 0.5);
     --code-bg: rgba(241, 245, 249, 0.85);
 }
 
-body {
+body.colorful {
     background: linear-gradient(135deg, #bae6fd 0%, #bbf7d0 35%, #e9d5ff 65%, #fed7aa 100%) !important;
     background-attachment: fixed !important;
+    transition: background 0.5s ease;
 }
 
-/* 确保所有层级透明 */
-.main,
-.container,
-.wrapper,
-main,
-footer,
-.list,
-.terms-tags,
-.archive-month,
-.archive-entry {
+body.colorful .main,
+body.colorful .container,
+body.colorful .wrapper,
+body.colorful main,
+body.colorful footer,
+body.colorful .list,
+body.colorful .terms-tags,
+body.colorful .archive-month,
+body.colorful .archive-entry {
     background: transparent !important;
 }
 
-/* Header 毛玻璃 */
-.header {
+body.colorful .header {
     background: rgba(255, 255, 255, 0.55) !important;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(200, 210, 230, 0.3);
 }
 
-/* 文章卡片 */
-.post-entry {
+body.colorful .post-entry {
     background: rgba(255, 255, 255, 0.55) !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -47,13 +41,12 @@ footer,
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.post-entry:hover {
+body.colorful .post-entry:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* 首页欢迎区域 */
-.first-entry {
+body.colorful .first-entry {
     background: rgba(255, 255, 255, 0.45) !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -63,88 +56,105 @@ footer,
     align-items: center;
 }
 
-.first-entry .entry-header,
-.first-entry .entry-content,
-.first-entry .entry-footer {
+body.colorful .first-entry .entry-header,
+body.colorful .first-entry .entry-content,
+body.colorful .first-entry .entry-footer {
     text-align: center;
     width: 100%;
 }
 
-/* 文章详情页 */
-.post-single .post-content {
+body.colorful .post-single .post-content {
     background: transparent;
 }
 
-/* 搜索框 */
-.search-input,
-#searchInput {
+body.colorful .search-input,
+body.colorful #searchInput {
     background: rgba(255, 255, 255, 0.6) !important;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
 
-/* 分页按钮 */
-.pagination a {
+body.colorful .pagination a {
     background: var(--primary) !important;
 }
 
-/* autofill 背景修复 */
-input:-webkit-autofill {
+body.colorful input:-webkit-autofill {
     box-shadow: 0 0 0 50px rgba(255, 255, 255, 0.8) inset !important;
 }
 
-/* ===== Dark Mode - 深色渐变 ===== */
-:root[data-theme="dark"] {
+/* ===== Dark Mode + colorful ===== */
+[data-theme="dark"] body.colorful {
     --theme: transparent !important;
     --entry: rgba(30, 41, 59, 0.6);
-    --primary: rgb(226, 232, 240);
-    --secondary: rgb(148, 163, 184);
-    --tertiary: rgb(51, 65, 85);
-    --content: rgb(203, 213, 225);
     --border: rgba(51, 65, 85, 0.5);
     --code-bg: rgba(30, 41, 59, 0.85);
     --code-block-bg: rgba(15, 23, 42, 0.9);
 }
 
-[data-theme="dark"] body {
+[data-theme="dark"] body.colorful {
     background: linear-gradient(135deg, #0c1929 0%, #1a1040 35%, #0d2137 65%, #132218 100%) !important;
     background-attachment: fixed !important;
 }
 
-[data-theme="dark"] .header {
+[data-theme="dark"] body.colorful .header {
     background: rgba(15, 23, 42, 0.6) !important;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(51, 65, 85, 0.3);
 }
 
-[data-theme="dark"] .post-entry {
+[data-theme="dark"] body.colorful .post-entry {
     background: rgba(30, 41, 59, 0.5) !important;
     border: 1px solid rgba(51, 65, 85, 0.35) !important;
 }
 
-[data-theme="dark"] .post-entry:hover {
+[data-theme="dark"] body.colorful .post-entry:hover {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
-[data-theme="dark"] .first-entry {
+[data-theme="dark"] body.colorful .first-entry {
     background: rgba(30, 41, 59, 0.4) !important;
     border: 1px solid rgba(51, 65, 85, 0.3) !important;
 }
 
-[data-theme="dark"] .list,
-[data-theme="dark"] .main,
-[data-theme="dark"] main,
-[data-theme="dark"] footer {
+[data-theme="dark"] body.colorful .list,
+[data-theme="dark"] body.colorful .main,
+[data-theme="dark"] body.colorful main,
+[data-theme="dark"] body.colorful footer {
     background: transparent !important;
 }
 
-[data-theme="dark"] .search-input,
-[data-theme="dark"] #searchInput {
+[data-theme="dark"] body.colorful .search-input,
+[data-theme="dark"] body.colorful #searchInput {
     background: rgba(30, 41, 59, 0.6) !important;
 }
 
-[data-theme="dark"] input:-webkit-autofill {
+[data-theme="dark"] body.colorful input:-webkit-autofill {
     box-shadow: 0 0 0 50px rgba(30, 41, 59, 0.8) inset !important;
 }
+
+/* Color toggle button style */
+#color-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 4px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+#color-toggle:hover {
+    opacity: 1;
+}
 </style>
+
+<script>
+// Color toggle: apply .colorful class based on localStorage
+(function() {
+    var pref = localStorage.getItem('blog-colorful');
+    // Default to colorful ON
+    if (pref !== 'false') {
+        document.body.classList.add('colorful');
+    }
+})();
+</script>

@@ -1,0 +1,23 @@
+<script>
+function toggleColor() {
+    var body = document.body;
+    body.classList.toggle('colorful');
+    var isColorful = body.classList.contains('colorful');
+    localStorage.setItem('blog-colorful', isColorful ? 'true' : 'false');
+    updateColorIcon(isColorful);
+}
+
+function updateColorIcon(isColorful) {
+    var icon = document.getElementById('color-icon');
+    if (icon) {
+        icon.style.opacity = isColorful ? '1' : '0.4';
+    }
+}
+
+// Set initial icon state
+(function() {
+    var pref = localStorage.getItem('blog-colorful');
+    var isColorful = pref !== 'false';
+    updateColorIcon(isColorful);
+})();
+</script>

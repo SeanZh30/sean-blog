@@ -55,6 +55,10 @@
                 </button>
                 {{- end }}
 
+                <button id="color-toggle" onclick="toggleColor()" title="Toggle color theme" aria-label="Toggle color theme">
+                    <span id="color-icon">🎨</span>
+                </button>
+
                 {{- if (not site.Params.disableLangToggle) }}
                     {{- $lang := .Lang}}
                     {{- $separator := or $label_text (not site.Params.disableThemeToggle)}}
