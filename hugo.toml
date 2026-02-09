@@ -1,0 +1,33 @@
+baseURL = 'https://SeanZh30.github.io/sean-blog/'
+languageCode = 'zh-cn'
+title = "Sean's Blog"
+theme = 'PaperMod'
+
+[params]
+  description = "Sean 的个人博客"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+
+  [params.homeInfoParams]
+    Title = "Hi, 欢迎来到 Sean's Blog"
+    Content = "这里是我的个人博客，分享技术文章和学习心得。"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
+    weight = 2
+  [[menu.main]]
+    identifier = "search"
+    name = "搜索"
+    url = "/search/"
+    weight = 3
