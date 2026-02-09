@@ -2,7 +2,6 @@ baseURL = 'https://SeanZh30.github.io/sean-blog/'
 title = "Sean's Blog"
 theme = 'PaperMod'
 defaultContentLanguage = 'zh'
-defaultContentLanguageInSubdir = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
@@ -28,17 +27,17 @@ defaultContentLanguageInSubdir = true
   [[languages.zh.menu.main]]
     identifier = "posts"
     name = "文章"
-    url = "/zh/posts/"
+    url = "/posts/"
     weight = 1
   [[languages.zh.menu.main]]
     identifier = "tags"
     name = "标签"
-    url = "/zh/tags/"
+    url = "/tags/"
     weight = 2
   [[languages.zh.menu.main]]
     identifier = "search"
     name = "搜索"
-    url = "/zh/search/"
+    url = "/search/"
     weight = 3
 
 # ---------- English ----------
