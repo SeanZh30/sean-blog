@@ -3,6 +3,9 @@ languageCode = 'zh-cn'
 title = "Sean's Blog"
 theme = 'PaperMod'
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [params]
   description = "Sean 的个人博客"
   comments = true
